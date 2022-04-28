@@ -5,15 +5,20 @@ const climatePicture = document.getElementById('climate-pic');
 const architectureSelect = document.getElementById('architecture-select');
 const architecturePicture = document.getElementById('architecture-pic');
 // let state
-let Climate = 0;
-let Architecture = 0;
+let climate = 0;
+let architecture = 0;
+let slogans = [];
 // set event listeners 
-climateDiv.addEventListener('change', () => {
-  console.log('', climateDiv.value);
+climateSelect.addEventListener('change', () => {
+  console.log('changing climate', climateSelect.value);
+
+  climate++;
 })
 
-architectureDiv.addEventListener('change', () => {
-
+architectureSelect.addEventListener('change', () => {
+  console.log('changing architecture', architectureSelect.value);
+  
+  architecture++;
 })
   // get user input
   // use user input to update state 
