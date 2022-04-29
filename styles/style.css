@@ -89,3 +89,15 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+#newDay {
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+}
+
+#buildingArc {
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+}

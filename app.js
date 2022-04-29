@@ -5,7 +5,12 @@ const climatePhoto = document.getElementById('newDay');
 const architectureSelect = document.getElementById('architecture-select');
 const architecturePhoto = document.getElementById('buildingArc');
 
+const coastlineSelect = document.getElementById ('coastline-select');
+const coastlinePhoto = document.getElementById ('coastperk');
+
 const sloganInput = document.getElementById('slogan-input');
+const sloganBtn = document.getElementById('slogan-btn');
+const sloganList = document.getElementById('slogan-list');
 
 // let state
 let climate = 0;
@@ -16,22 +21,29 @@ let slogan = [];
 // set event listeners 
 climateSelect.addEventListener('change', () => {
     console.log('changing climate', climateSelect.value);
-    climatePhoto.src = `..assets/${climateSelect.value}-climate.png`;
-    climatePhoto.style.backgroundImage = `url('../assets/${climateSelect.value}-climate.png')`;
+    climatePhoto.src = `./assets/${climateSelect.value}-climate.png`;
+    climatePhoto.style.backgroundImage = `url('./assets/${climateSelect.value}-climate.png')`;
     climate++;
 });
 
 architectureSelect.addEventListener('change', () => {
     console.log('changing architecture', architectureSelect.value);
-    architecturePhoto.src = `..assets/${climateSelect.value}-climate.png`;
-    architecturePhoto.style.backgroundImage = `url('../assets/${architecturePhoto.value}-architecture.png')`;
+    architecturePhoto.src = `./assets/${architectureSelect.value}-architecture.png`;
+    architecturePhoto.style.backgroundImage = `url('./assets/${architecturePhoto.value}-architecture.png')`;
     architecture++;
 });
 
-sloganInput.addEventListener('click', () => {
-    slogan.push(sloganInput.value);
-    displaySlogans();
+coastlineSelect.addEventListener('change', () => {
+  console.log('changing coastline', coastlineSelect.value);
+  coastlinePhoto.src = `./assets/${coastlineSelect.value}-coastline.png`;
+  coastlinePhoto.style.backgroundImage = `url('./assets/${coastlinePhoto.value}-coastline.png')`;
+  coastline++;
+});
 
+
+sloganInput.addEventListener('click', () => {
+    slogan.push(sloganList.value);
+    displaySlogans();
 });
 
 function displaySlogans() {
