@@ -27,11 +27,19 @@ architectureSelect.addEventListener('change', () => {
 })
 
 slogan.addEventListener('click', () => {
-  slogan.push
+  slogan.push(sloganInput.value);
+  displaySlogan();
+
 })
 
-  }
-}
+function displaySlogans() {
+  sloganList.textContent = '';
+  for (let slogan of slogans) {
+    const p = document.createElement ('p');
+    p.textContent = slogan;
+    slogan.append(p);
   // get user input
   // use user input to update state 
   // update DOM to reflect the new state
+  }
+}
