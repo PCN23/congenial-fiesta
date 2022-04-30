@@ -5,14 +5,14 @@ const climatePhoto = document.getElementById('newDay');
 const architectureSelect = document.getElementById('architecture-select');
 const architecturePhoto = document.getElementById('buildingArc');
 
-const coastlineSelect = document.getElementById ('coastline-select');
-const coastlinePhoto = document.getElementById ('coastperk');
+const coastlineSelect = document.getElementById('coastline-select');
+const coastlinePhoto = document.getElementById('bottle');
 
 const sloganInput = document.getElementById('slogan-input');
 const sloganBtn = document.getElementById('slogan-btn');
 const sloganList = document.getElementById('slogan-list');
 const list = document.getElementById('list');
-const timesChanged = document.getElementById('timesChanged');
+const timesChanged = document.getElementById('changed');
 
 // let state
 let climate = 0;
@@ -26,7 +26,7 @@ climateSelect.addEventListener('change', () => {
     climatePhoto.src = `./assets/${climateSelect.value}-climate.png`;
     climatePhoto.style.backgroundImage = `url('./assets/${climateSelect.value}-climate.png')`;
     climate++;
-    displaystats();
+    displayStats();
 });
 
 architectureSelect.addEventListener('change', () => {
@@ -34,15 +34,16 @@ architectureSelect.addEventListener('change', () => {
     architecturePhoto.src = `./assets/${architectureSelect.value}-architecture.png`;
     architecturePhoto.style.backgroundImage = `url('./assets/${architectureSelect.value}-architecture.png')`;
     architecture++;
-    displaystats();
+    displayStats();
 });
 
 coastlineSelect.addEventListener('change', () => {
     console.log('changing coastline', coastlineSelect.value);
+    console.log(coastlinePhoto);
     coastlinePhoto.src = `./assets/${coastlineSelect.value}-coastline.png`;
     coastlinePhoto.style.backgroundImage = `url('./assets/${coastlineSelect.value}-coastline.png')`;
     coastline++;
-    displaystats();
+    displayStats();
 });
 
 
@@ -59,11 +60,10 @@ function displaySlogans() {
         const p = document.createElement ('p');
         p.textContent = slogan;
         list.append(p);
+    }}
   // get user input
   // use user input to update state 
-        function displaystats() {
-            timesChanged.textContent = `You have changed the climate ${climate} times, the architecture ${architecture} times and the coastline ${coastline} times.`;
-        }
-  // update DOM to reflect the new state
-    }
+function displayStats() {
+    timesChanged.textContent = `You have changed the climate ${climate} times, the architecture ${architecture} times and the coastline ${coastline} times.`;
 }
+  // update DOM to reflect the new state
